@@ -1,13 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './App.css';
-
-const handleJSON = () => {
-  return JSON.parse(localStorage.getItem("tasks"))
-}
-
 function App() {
   const [task, setTask] = useState("")
-  const [tasks, setTasks] = useState(handleJSON ?? [])
+  const [tasks, setTasks] = useState([])
 
   const inputRef = useRef()
 
@@ -15,15 +10,12 @@ function App() {
     inputRef.current.focus()
     setTask("")
     setTasks(prev => {
-      const newTasks = [...prev, task]
-      localStorage.setItem("tasks", JSON.stringify(newTasks))
-      return newTasks
+      return [...prev, task]
     })
   }
   const handleRemove = index => {
     const newTasks = [...tasks]
     newTasks.splice(index, 1)
-    localStorage.setItem("tasks", JSON.stringify(newTasks))
     return setTasks(newTasks)
   }
   useEffect(() => {
