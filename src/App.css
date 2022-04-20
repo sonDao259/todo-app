@@ -1,57 +1,86 @@
 body {
-  background-color: #fff425;  
+  background-color: #4781ff;
 }
 .App {
   display: flex;
   align-items: center;
   flex-direction: column;
+  margin-top: 50px;
+}
+.app-container {
+  width: 400px;
+  max-width: 100%;
+  background-color: #fff;
+  padding: 20px;
+}
+.data-input-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
 }
 .input-box {
   width: 300px;
   height: 50px;
   font-size: 16px;
-  border: 1px solid #999;
+  border-top: none;
+  border-right: none;
+  border-left: none;
   margin-right: 5px;
+  box-sizing: border-box;
+  border-radius: 2px;
+  outline: none;
 }
 .submit-btn {
-  height: 40px;
-  width: 40px;
-  border-radius: 100px;
+  height: 100%;
+  width: 80px;
+  border-radius: 2px;
   border: 1px solid #999;
   font-size: 16px;
-  box-sizing: border-box;
+  background-color: #8896f5;
+  cursor: pointer;
 }
 .list {
-  padding: 20px;
-  /* background-color: #ddd; */
-  box-shadow: 0 2px 8px #ccc;
+  list-style: none;
+  padding-left: 0;
 }
 .list-item {
-  /* padding: 5px 0; */
   font-size: 16px;
   margin-top: 5px;
   height: 40px;
-}
-.list-item:nth-of-type(2n + 1) {
-  background-color: #fff9c7;
-}
-.list-item:nth-of-type(2n + 2) {
-  background-color: #fffc5e;
+  background-color: #8896f5;
+  border-radius: 2px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 4px;
 }
 .remove-btn {
+  width: 30px;
+  height: 30px;
   background-color: #ff3628;
-  width: 100%;
-  height: 40px;
+  padding: 2px;
   font-size: 20px;
   border: 1px solid #ff3628;
-  /* border-radius: 6px; */
+  border-radius: 50%;
   cursor: pointer;
 }
-.remove-btn:hover {
+.remove-btn:hover, .submit-btn:hover {
   opacity: 0.6;
 }
 .label {
   font-size: 16px;
   text-transform: uppercase;
   font-weight: bold;
+}
+.content-block {
+  overflow-x: auto;
+  padding: 2px;
+  scrollbar-width: thin;
+  color: #f1f1f1;
+}
+.edit-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
