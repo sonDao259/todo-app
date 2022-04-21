@@ -1,13 +1,12 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState } from 'react';
 import './App.css';
+import Input from './components/Input';
+
 function App() {
   const [task, setTask] = useState("")
   const [tasks, setTasks] = useState([])
 
-  const inputRef = useRef()
-
   const handleAdd = () => {
-    inputRef.current.focus()
     setTask("")
     setTasks(prev => {
       return [...prev, task]
@@ -18,9 +17,6 @@ function App() {
     newTasks.splice(index, 1)
     return setTasks(newTasks)
   }
-  useEffect(() => {
-    console.log(tasks);
-  }, [tasks])
 
   return (
     <div className="App">
@@ -28,10 +24,9 @@ function App() {
         <h1>Todo App</h1>
         <hr></hr>
         <div className='data-input-box'>
-          <input 
-            value = {task}
+          <Input
+            task = {task}
             onChange = {(e) => setTask(e.target.value)}
-            ref = {inputRef}
             className = "input-box"
             placeholder = "Add task here..."
           />
@@ -43,8 +38,9 @@ function App() {
           </button>
         </div>
         <ul className='list'>
-          {tasks.map((task, index) => (
-            <React.Fragment key = {index}>
+          {
+            tasks.map((task, index) => (
+              <React.Fragment key = {index}>
                 <li className = "list-item">
                   <div className='content-block'>
                     {task}
@@ -59,7 +55,8 @@ function App() {
                   </div>
                 </li>
               </React.Fragment>
-          ))}
+            ))
+          }
         </ul>
       </div>
     </div>

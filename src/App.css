@@ -1,5 +1,5 @@
 body {
-  background-color: #4781ff;
+  background-image: linear-gradient(to right, red , yellow);
 }
 .App {
   display: flex;
@@ -35,9 +35,9 @@ body {
   height: 100%;
   width: 80px;
   border-radius: 2px;
-  border: 1px solid #999;
+  border-width: 0;
   font-size: 16px;
-  background-color: #8896f5;
+  background-image: linear-gradient(to right, red , yellow);
   cursor: pointer;
 }
 .list {
@@ -48,12 +48,20 @@ body {
   font-size: 16px;
   margin-top: 5px;
   height: 40px;
-  background-color: #8896f5;
   border-radius: 2px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 2px 4px;
+}
+.list-item:nth-of-type(3n + 1) {
+  background-image: linear-gradient(to right, #2b63fc , #21005e);
+}
+.list-item:nth-of-type(3n + 2) {
+  background-image: linear-gradient(to right, #18a118 , #d4ff84);
+}
+.list-item:nth-of-type(3n + 3) {
+  background-image: linear-gradient(to right, #fc2bc8 , #4d0234);
 }
 .remove-btn {
   width: 30px;
@@ -61,8 +69,8 @@ body {
   background-color: #ff3628;
   padding: 2px;
   font-size: 20px;
-  border: 1px solid #ff3628;
   border-radius: 50%;
+  border-width: 0;
   cursor: pointer;
 }
 .remove-btn:hover, .submit-btn:hover {
